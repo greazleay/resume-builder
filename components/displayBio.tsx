@@ -1,20 +1,20 @@
-import { Text, Box, Flex, VStack, Stack, Badge, border } from '@chakra-ui/react'
+import { Text, Box, Flex, VStack, Stack, Badge } from '@chakra-ui/react'
+import { useResume } from '../context/app.context';
 
-interface PageProps {
-    bioData: { [key: string]: string };
-}
-
-export default function DisplayBio({ bioData }: PageProps) {
+export default function DisplayBio() {
+    
+    const { biodata } = useResume();
+    
     return (
-        <Box textAlign='left' padding={1} borderRadius='md'>
+        <Flex direction='column' justifyContent='space-around' textAlign='left' padding={4} maxW='sm' borderWidth='1px' borderRadius='lg'>
             <Badge variant='outline' colorScheme='purple'>PERSONAL DETAILS</Badge>
             <Stack spacing={6}>
-                <Text>{bioData.firstName} {bioData.lastName}</Text>
-                <Text>{bioData.role}</Text>
-                <Text>{bioData.emailAddress}</Text>
-                <Text>{bioData.phoneNumber}</Text>
-                <Text>{bioData.address}</Text>
+                <Text>{biodata.firstName} {biodata.lastName}</Text>
+                <Text>{biodata.role}</Text>
+                <Text>{biodata.emailAddress}</Text>
+                <Text>{biodata.phoneNumber}</Text>
+                <Text>{biodata.address}</Text>
             </Stack>
-        </Box>
+        </Flex>
     )
 }

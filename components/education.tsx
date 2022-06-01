@@ -1,4 +1,5 @@
-import { useForm } from "react-hook-form";
+import { useState, ChangeEvent } from 'react';
+import { useForm } from 'react-hook-form';
 import {
     Accordion,
     AccordionButton,
@@ -12,16 +13,38 @@ import {
     Heading,
     Input,
 } from '@chakra-ui/react'
-
+import { PageProps } from '../interfaces/component.interface';
+import { SchoolDto } from '../dto/component.dto';
 
 export default function Education() {
 
+    // const handleEducationChange = (e: ChangeEvent<HTMLInputElement>) => {
+    //     const { name, value } = e.target
+    //     const updatedEducation = [...education, { [name]: value }]
+    //     setEducation(updatedEducation)
+    //   }
+    
+    //   const addEducation = () => {
+    //     setEducation([...education, new SchoolDto(education.length)])
+    //   }
+    
+    //   const educationList = education.map((educationItem, index) => {
+    //     return (
+    //       <Box key={index}>
+    //         <Text>{educationItem.school}</Text>
+    //         <Text>{educationItem.degree}</Text>
+    //         <Text>{educationItem.fieldOfStudy}</Text>
+    //         <Text>{educationItem.startDate} - {educationItem.endDate}</Text>
+    //       </Box>
+    //     )
+    //   })
+    
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data: any) => console.log(data);
 
     return (
         <div>
-            <Accordion allowToggle>
+            <Accordion defaultIndex={[0]} allowMultiple allowToggle>
                 <AccordionItem>
                     <AccordionButton>
                         <Heading size='sm'>School</Heading>
@@ -38,11 +61,11 @@ export default function Education() {
                                 </FormErrorMessage>
                             </FormControl>
 
-                            <FormControl isInvalid={errors.degree}>
-                                <FormLabel htmlFor='degree'>Degree</FormLabel>
-                                <Input id='degree' placeholder='Degree' {...register('degree', { required: 'This is required', minLength: 1 })} />
+                            <FormControl isInvalid={errors.course}>
+                                <FormLabel htmlFor='course'>Course</FormLabel>
+                                <Input id='course' placeholder='Course' {...register('course', { required: 'This is required', minLength: 1 })} />
                                 <FormErrorMessage>
-                                    {errors.degree && errors.degree.message}
+                                    {errors.course && errors.course.message}
                                 </FormErrorMessage>
                             </FormControl>
 
