@@ -1,4 +1,5 @@
 import { useState, ChangeEvent } from 'react';
+import { ISkill } from '../interfaces/resume-context.interface';
 
 export const useResumeState = () => {
 
@@ -31,6 +32,26 @@ export const useResumeState = () => {
         }
     ]);
 
+    const [skillsList, setSkillsList] = useState<ISkill[]>([
+        {
+            skillName: 'Skill 1',
+            skillLevel: 'Beginner'
+        },
+        {
+            skillName: 'Skill 2',
+            skillLevel: 'Intermediate'
+
+        },
+        {
+            skillName: 'Skill 3',
+            skillLevel: 'Advanced'
+        },
+        {
+            skillName: 'Skill 4',
+            skillLevel: 'Expert'
+        }
+    ])
+
     const handleBiodataChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setBiodata({ ...biodata, [name]: value });
@@ -60,5 +81,15 @@ export const useResumeState = () => {
         setExperienceList(updatedExperienceList);
     }
 
-    return { biodata, handleBiodataChange, addEducation, educationList, manageEducationList, addExperience, experienceList, manageExperienceList };
+    const addSkill = (data: ISkill) => {
+        const updatedSkillsList = skillsList.some(skill => skill.skillName === data.skillName) ? skillsList : [...skillsList, data];
+        setSkillsList(updatedSkillsList);
+    }
+
+    const removeSkill = (id: number) => {
+        const updatedSkillsList = skillsList.filter((skill, index) => index !== id);
+        setSkillsList(updatedSkillsList);
+    }
+
+    return { biodata, handleBiodataChange, addEducation, educationList, manageEducationList, addExperience, experienceList, manageExperienceList, skillsList, addSkill, removeSkill };
 }

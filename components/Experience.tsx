@@ -60,7 +60,7 @@ export default function Experience() {
                     )
                 })}
             </Accordion>
-            <Button colorScheme='teal' mt={4} type="button" onClick={addExperience}>Add More</Button>
+            <Button colorScheme='purple' mt={4} type="button" onClick={addExperience}>Add More</Button>
 
         </div>
     )

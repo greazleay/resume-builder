@@ -7,6 +7,7 @@ import Experience from '../components/Experience'
 import PreviewBiodata from '../components/PreviewBiodata'
 import PreviewEducation from '../components/PreviewEducation'
 import PreviewExperience from '../components/PreviewExperience'
+import Skills from '../components/Skills'
 
 export default function Home() {
 
@@ -42,6 +43,10 @@ export default function Home() {
               
               <TabPanel>
                 <Experience />
+              </TabPanel>
+
+              <TabPanel>
+                <Skills />
               </TabPanel>
             
             </TabPanels>

@@ -58,7 +58,7 @@ export default function Education() {
                     )
                 })}
             </Accordion>
-            <Button colorScheme='teal' mt={4} type="button" onClick={addEducation}>Add More</Button>
+            <Button colorScheme='purple' mt={4} type="button" onClick={addEducation}>Add More</Button>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import { useResume } from "../context/app.context";
+import { useResume } from '../context/app.context';
 import { Badge, Flex, Stack, Text, VStack } from "@chakra-ui/react";
 
 export default function PreviewExperience() {
