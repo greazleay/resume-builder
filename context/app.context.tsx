@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import { PageProps } from '../interfaces/component.interface';
+import { PageProps } from '../interfaces/app.interface';
 import { useResumeState } from '../hooks/use-resume.state';
 import { IResumeContext } from '../interfaces/resume-context.interface';
 

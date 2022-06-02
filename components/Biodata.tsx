@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { FormControl, FormErrorMessage, FormLabel, Input } from '@chakra-ui/react'
 import { useResume } from '../context/app.context';
 
-export default function BioData() {
+export default function Biodata() {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data: any) => console.log(data);

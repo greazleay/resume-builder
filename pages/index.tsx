@@ -1,22 +1,14 @@
-import { useState, ChangeEvent } from 'react'
 import { TabList, Tabs, Tab, TabPanels, TabPanel, Box, Text, Divider } from '@chakra-ui/react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import BioData from '../components/biodata'
-import Education from '../components/education'
-import Experience from '../components/experience'
-import DisplayBio from '../components/displayBio'
+import Biodata from '../components/Biodata'
+import Education from '../components/Education'
+import Experience from '../components/Experience'
+import PreviewBiodata from '../components/PreviewBiodata'
+import PreviewEducation from '../components/PreviewEducation'
+import PreviewExperience from '../components/PreviewExperience'
 
 export default function Home() {
-
-  // const [bioData, setBioData] = useState({})
-  // const [experience, setExperience] = useState([])
-
-  // const handleBioDataChange = (e: ChangeEvent<HTMLInputElement>) => {
-  //   const { name, value } = e.target
-  //   setBioData({ ...bioData, [name]: value })
-  //   console.log(bioData)
-  // }
 
   return (
     <div className={styles.container}>
@@ -27,31 +19,42 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+       
         <Box>
           <Tabs>
+            
             <TabList>
               <Tab><Text>Personal Details</Text></Tab>
               <Tab><Text>Education</Text></Tab>
               <Tab><Text>Work Experience</Text></Tab>
               <Tab><Text>Skills</Text></Tab>
             </TabList>
+            
             <TabPanels>
+              
               <TabPanel>
-                <BioData />
+                <Biodata />
               </TabPanel>
+              
               <TabPanel>
                 <Education />
               </TabPanel>
+              
               <TabPanel>
                 <Experience />
               </TabPanel>
+            
             </TabPanels>
+          
           </Tabs>
         </Box>
 
         <Box>
-          <DisplayBio />
+          <PreviewBiodata />
           <Divider />
+          <PreviewEducation />
+          <Divider />
+          <PreviewExperience />
         </Box>
       </main>
 
