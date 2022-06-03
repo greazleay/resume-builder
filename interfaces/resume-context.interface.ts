@@ -1,3 +1,5 @@
+import { ChangeEvent } from 'react';
+
 export interface ISkill {
     skillName: string,
     skillLevel: string
@@ -5,17 +7,20 @@ export interface ISkill {
 
 export interface IResumeContext {
     biodata: { [key: string]: string };
-    handleBiodataChange: (event: any) => void;
+    handleBiodataChange: (event: ChangeEvent<HTMLInputElement>) => void;
 
     educationList: { [key: string]: string }[];
     addEducation: () => void;
-    manageEducationList: (event: any, index: number) => void;
+    removeEducation: (index: number) => void;
+    manageEducationList: (event: ChangeEvent<HTMLInputElement>, index: number) => void;
 
     experienceList: { [key: string]: string }[];
     addExperience: () => void;
-    manageExperienceList: (event: any, index: number) => void;
+    removeExperience: (index: number) => void;
+    manageExperienceList: (event: ChangeEvent<any>, index: number) => void;
 
     skillsList: ISkill[];
-    addSkill: (event: any) => void;
+    addSkill: (data: ISkill) => void;
     removeSkill: (id: number) => void;
+
 }

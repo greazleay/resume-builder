@@ -1,7 +1,7 @@
-import { Text, Box, Flex, VStack, Stack, Badge } from '@chakra-ui/react'
-import { useResume } from '../context/app.context';
+import { Text, Flex, Stack, Badge } from '@chakra-ui/react'
+import { useResume } from '../../context/app.context';
 
-export default function PreviewBiodata() {
+export const PreviewBiodata = () => {
     
     const { biodata } = useResume();
     

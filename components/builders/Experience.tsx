@@ -1,4 +1,4 @@
-import { useResume } from '../context/app.context';
+import { useResume } from '../../context/app.context';
 import {
     Accordion,
     AccordionButton,
@@ -14,12 +14,12 @@ import {
 } from '@chakra-ui/react'
 
 
-export default function Experience() {
+export const Experience = () => {
 
-    const { addExperience, manageExperienceList, experienceList } = useResume();
+    const { addExperience, manageExperienceList, experienceList, removeExperience } = useResume();
 
     return (
-        <div>
+        <>
             <Accordion defaultIndex={[0]} allowMultiple allowToggle>
                 {experienceList.map((experience, index) => {
                     return (
@@ -56,12 +56,15 @@ export default function Experience() {
                                 </FormControl>
 
                             </AccordionPanel>
+
+                            <Button colorScheme={'red'} onClick={() => removeExperience(index)}>Remove</Button>
+                        
                         </AccordionItem>
                     )
                 })}
             </Accordion>
             <Button colorScheme='purple' mt={4} type="button" onClick={addExperience}>Add More</Button>
 
-        </div>
+        </>
     )
 }

@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, useRef, ChangeEvent } from 'react';
 import { ISkill } from '../interfaces/resume-context.interface';
 
 export const useResumeState = () => {
@@ -62,6 +62,11 @@ export const useResumeState = () => {
         setEducationList(newEducationList);
     }
 
+    const removeEducation = (index: number) => {
+        const updatedEducationList = educationList.length > 1 ? educationList.filter((education, i) => i !== index) : educationList;
+        setEducationList(updatedEducationList);
+    }
+
     const manageEducationList = (e: ChangeEvent<HTMLInputElement>, id: number) => {
         const { name, value } = e.target
         const updatedEducationList = [...educationList];
@@ -71,6 +76,11 @@ export const useResumeState = () => {
 
     const addExperience = () => {
         const updatedExperienceList = [...experienceList, {}];
+        setExperienceList(updatedExperienceList);
+    }
+
+    const removeExperience = (index: number) => {
+        const updatedExperienceList = experienceList.length > 1 ? experienceList.filter((experience, i) => i !== index) : experienceList;
         setExperienceList(updatedExperienceList);
     }
 
@@ -91,5 +101,5 @@ export const useResumeState = () => {
         setSkillsList(updatedSkillsList);
     }
 
-    return { biodata, handleBiodataChange, addEducation, educationList, manageEducationList, addExperience, experienceList, manageExperienceList, skillsList, addSkill, removeSkill };
+    return { biodata, handleBiodataChange, addEducation, educationList, manageEducationList, removeEducation, addExperience, experienceList, manageExperienceList, removeExperience, skillsList, addSkill, removeSkill };
 }

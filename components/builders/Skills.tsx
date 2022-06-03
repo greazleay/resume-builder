@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { useResume } from '../context/app.context';
+import { useResume } from '../../context/app.context';
 import {
     Box,
     Button,
@@ -15,15 +15,16 @@ import {
     TagCloseButton,
     TagLabel,
 } from '@chakra-ui/react'
+import { MdArrowDropDownCircle } from 'react-icons/md';
 
-export default function Skills() {
+export const Skills = () => {
 
     const { skillsList, addSkill, removeSkill } = useResume();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data: any) => addSkill(data);
 
     return (
-        <Box>
+        <Box rounded={'sm'} borderWidth='1px' padding={'5'}>
             <Stack alignItems='flex-start' spacing={4} as='form' onSubmit={handleSubmit(onSubmit)}>
                 <FormControl isInvalid={errors.skillName}>
                     <FormLabel htmlFor='skillName'>Skill Name</FormLabel>
@@ -34,7 +35,8 @@ export default function Skills() {
                 </FormControl>
 
                 <FormControl isInvalid={errors.skillLevel}>
-                    <Select placeholder='Skill Level' colorScheme={'blue'} {...register('skillLevel', { required: 'Please select a value' })}>
+                    <FormLabel htmlFor='skillLevel'>Skill Level</FormLabel>
+                    <Select placeholder='-- Select Option --' colorScheme={'blue'} icon={<MdArrowDropDownCircle />} {...register('skillLevel', { required: 'Please select a value' })}>
                         <option value='Beginner'>Beginner</option>
                         <option value='Intermediate'>Intermediate</option>
                         <option value='Expert'>Expert</option>
@@ -53,8 +55,8 @@ export default function Skills() {
                 <HStack spacing={4}>
                     {skillsList.map((skill, index: number) => {
                         return (
-                            <Tag key={index} colorScheme='purple' size='md'>
-                                <TagLabel>{skill.skillName} {skill.skillLevel}</TagLabel>
+                            <Tag key={index} colorScheme='purple' size='lg' borderRadius={'lg'}>
+                                <TagLabel>{skill.skillName} - {skill.skillLevel}</TagLabel>
                                 <TagCloseButton onClick={() => removeSkill(index)} aria-label='Remove skill' />
                             </Tag>
                         )
@@ -63,9 +65,5 @@ export default function Skills() {
             </Box>
         </Box>
 
-
     )
-
-
-
 }

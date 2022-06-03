@@ -10,14 +10,14 @@ import {
     Heading,
     Input,
 } from '@chakra-ui/react'
-import { useResume } from '../context/app.context';
+import { useResume } from '../../context/app.context';
 
-export default function Education() {
+export const Education = () => {
 
-    const { educationList, addEducation, manageEducationList } = useResume();
+    const { educationList, addEducation, manageEducationList, removeEducation } = useResume();
 
     return (
-        <div>
+        <>
             <Accordion defaultIndex={[0]} allowMultiple allowToggle>
                 {educationList.map((education, index) => {
                     return (
@@ -54,11 +54,14 @@ export default function Education() {
                                 </FormControl>
 
                             </AccordionPanel>
+
+                            <Button colorScheme={'red'} onClick={() => removeEducation(index)}>Remove</Button>
+
                         </AccordionItem>
                     )
                 })}
             </Accordion>
             <Button colorScheme='purple' mt={4} type="button" onClick={addEducation}>Add More</Button>
-        </div>
+        </>
     )
 }

@@ -1,7 +1,7 @@
-import { useResume } from "../context/app.context";
-import { Badge, Flex, Stack, Text, VStack } from "@chakra-ui/react";
+import { useResume } from '../../context/app.context';
+import { Badge, Flex, Stack, Text, VStack } from '@chakra-ui/react';
 
-export default function PreviewEducation() {
+export const PreviewEducation = () => {
 
     const { educationList } = useResume();
 
