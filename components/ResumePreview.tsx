@@ -7,9 +7,9 @@ import { PreviewSkills } from './previews/PreviewSkills'
 export const ResumePreview = forwardRef<BoxProps, 'div'>((props, ref) => (
     <Box ref={ref} borderWidth={'medium'} rounded='md' padding={'2'} fontFamily='Poppins' >
         <PreviewBiodata />
-        <PreviewEducation />
-        <PreviewExperience />
         <PreviewSkills />
+        <PreviewExperience />
+        <PreviewEducation />
     </Box>
 ))
 
