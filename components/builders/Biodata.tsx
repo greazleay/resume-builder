@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { FormControl, FormErrorMessage, FormLabel, Input, Stack } from '@chakra-ui/react'
+import { Box, FormControl, FormErrorMessage, FormLabel, Input, Stack } from '@chakra-ui/react'
 import { useResume } from '../../context/app.context';
 
 export const Biodata = () => {
@@ -10,7 +10,7 @@ export const Biodata = () => {
     const { handleBiodataChange } = useResume();
 
     return (
-        <Stack as='form' onSubmit={handleSubmit(onSubmit)}>
+        <Box as='form' onSubmit={handleSubmit(onSubmit)} rounded={'sm'} borderWidth='1px' padding={'5'}>
 
             <FormControl isInvalid={errors.firstName}>
                 <FormLabel htmlFor='firstName'>First Name</FormLabel>
@@ -60,6 +60,6 @@ export const Biodata = () => {
                 </FormErrorMessage>
             </FormControl>
 
-        </Stack>
+        </Box>
     );
 }

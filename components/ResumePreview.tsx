@@ -5,13 +5,10 @@ import { PreviewExperience } from './previews/PreviewExperience'
 import { PreviewSkills } from './previews/PreviewSkills'
 
 export const ResumePreview = forwardRef<BoxProps, 'div'>((props, ref) => (
-    <Box borderWidth={'medium'} rounded='md' w={'max-content'} ref={ref}>
+    <Box ref={ref} borderWidth={'medium'} rounded='md' padding={'2'} fontFamily='Poppins' >
         <PreviewBiodata />
-        <Divider />
         <PreviewEducation />
-        <Divider />
         <PreviewExperience />
-        <Divider />
         <PreviewSkills />
     </Box>
 ))

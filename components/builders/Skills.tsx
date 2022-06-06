@@ -3,9 +3,11 @@ import { useResume } from '../../context/app.context';
 import {
     Box,
     Button,
+    Flex,
     FormControl,
     FormErrorMessage,
     FormLabel,
+    Grid,
     Heading,
     HStack,
     Input,
@@ -25,7 +27,7 @@ export const Skills = () => {
 
     return (
         <Box rounded={'sm'} borderWidth='1px' padding={'5'}>
-            <Stack alignItems='flex-start' spacing={4} as='form' onSubmit={handleSubmit(onSubmit)}>
+            <Stack as='form' spacing={4} onSubmit={handleSubmit(onSubmit)}>
                 <FormControl isInvalid={errors.skillName}>
                     <FormLabel htmlFor='skillName'>Skill Name</FormLabel>
                     <Input id='skillName' placeholder='Skill Name' {...register('skillName', { required: 'This is required', minLength: 1 })} />
@@ -46,13 +48,12 @@ export const Skills = () => {
                     </FormErrorMessage>
                 </FormControl>
 
-
                 <Button type='submit' colorScheme='purple' mt={4}>Add</Button>
             </Stack>
 
             <Box>
                 <Heading as='h3' size='sm' mt={4}>Skills</Heading>
-                <HStack spacing={4}>
+                <Grid templateColumns='repeat(3, 1fr)' gap={6} >
                     {skillsList.map((skill, index: number) => {
                         return (
                             <Tag key={index} colorScheme='purple' size='lg' borderRadius={'lg'}>
@@ -61,7 +62,7 @@ export const Skills = () => {
                             </Tag>
                         )
                     })}
-                </HStack>
+                </Grid>
             </Box>
         </Box>
 

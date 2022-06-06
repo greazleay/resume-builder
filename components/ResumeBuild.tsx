@@ -6,8 +6,8 @@ import { Skills } from './builders/Skills'
 
 export const ResumeBuild = () => {
     return (
-        <Box borderWidth={'medium'} rounded='md' w={'max-content'}>
-            <Tabs>
+        <Box borderWidth={'medium'} rounded='md' marginBottom={'1.5'}>
+            <Tabs variant='soft-rounded' colorScheme={'purple'} >
 
                 <TabList>
                     <Tab><Text>Personal Details</Text></Tab>

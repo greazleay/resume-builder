@@ -1,10 +1,10 @@
-import { useResume } from '../../context/app.context';
 import {
     Accordion,
     AccordionButton,
     AccordionIcon,
     AccordionItem,
     AccordionPanel,
+    Box,
     Button,
     FormControl,
     FormLabel,
@@ -14,6 +14,7 @@ import {
     Textarea
 } from '@chakra-ui/react'
 import { MdDeleteForever } from 'react-icons/md'
+import { useResume } from '../../context/app.context';
 
 
 export const Experience = () => {
@@ -21,7 +22,7 @@ export const Experience = () => {
     const { addExperience, manageExperienceList, experienceList, removeExperience } = useResume();
 
     return (
-        <>
+        <Box rounded={'sm'} borderWidth='1px' padding={'5'}>
             <Accordion defaultIndex={[0]} allowMultiple allowToggle>
                 {experienceList.map((experience, index) => {
                     return (
@@ -59,7 +60,7 @@ export const Experience = () => {
 
                             </AccordionPanel>
 
-                            <IconButton colorScheme={'red'} aria-label='Remove Entry' icon={<MdDeleteForever />} onClick={() => removeExperience(index)}/>
+                            <IconButton colorScheme={'red'} aria-label='Remove Entry' icon={<MdDeleteForever />} onClick={() => removeExperience(index)} />
                         
                         </AccordionItem>
                     )
@@ -67,6 +68,6 @@ export const Experience = () => {
             </Accordion>
             <Button colorScheme='purple' mt={4} type="button" onClick={addExperience}>Add More</Button>
 
-        </>
+        </Box>
     )
 }

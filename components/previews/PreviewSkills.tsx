@@ -1,22 +1,22 @@
 import { useResume } from '../../context/app.context';
-import { Badge, Center, Flex, Wrap, WrapItem } from '@chakra-ui/react';
+import { Badge, Box, Center, Flex, Wrap, WrapItem } from '@chakra-ui/react';
 
 export const PreviewSkills = () => {
 
     const { skillsList } = useResume();
 
     return (
-        <Flex direction='column' justifyContent='space-around' textAlign='left' padding={4} maxW='sm' borderWidth='1px' borderRadius='lg'>
-            <Badge variant='outline' colorScheme='purple'>SKILLS</Badge>
-            <Wrap>
+        <Box borderWidth={'thin'} rounded='md' padding={2}>
+            <Badge variant='solid' colorScheme='purple'>SKILLS</Badge>
+            <Wrap spacing={'2'}>
                 {skillsList.map((skill, index) => {
                     return (
                         <WrapItem key={index}>
-                            <Center w='150px' h='50px' bg='purple.200' borderRadius="md">{skill.skillName} {skill.skillLevel}</Center>
+                            <Center w='120px' h='50px' bg='purple.200' borderRadius="md"padding={'1'} >{skill.skillName} {skill.skillLevel}</Center>
                         </WrapItem>
                     )
                 })}
             </Wrap>
-        </Flex>
+        </Box>
     )
 }

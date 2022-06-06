@@ -10,6 +10,7 @@ import {
     Heading,
     Input,
     IconButton,
+    Box,
 } from '@chakra-ui/react'
 import { useResume } from '../../context/app.context';
 import { MdDeleteForever } from 'react-icons/md'
@@ -19,7 +20,7 @@ export const Education = () => {
     const { educationList, addEducation, manageEducationList, removeEducation } = useResume();
 
     return (
-        <>
+        <Box rounded={'sm'} borderWidth='1px' padding={'5'}>
             <Accordion defaultIndex={[0]} allowMultiple allowToggle>
                 {educationList.map((education, index) => {
                     return (
@@ -64,6 +65,6 @@ export const Education = () => {
                 })}
             </Accordion>
             <Button colorScheme='purple' mt={4} type="button" onClick={addEducation}>Add More</Button>
-        </>
+        </Box>
     )
 }
