@@ -9,9 +9,11 @@ import {
     FormControl,
     FormLabel,
     Heading,
+    IconButton,
     Input,
     Textarea
 } from '@chakra-ui/react'
+import { MdDeleteForever } from 'react-icons/md'
 
 
 export const Experience = () => {
@@ -57,7 +59,7 @@ export const Experience = () => {
 
                             </AccordionPanel>
 
-                            <Button colorScheme={'red'} onClick={() => removeExperience(index)}>Remove</Button>
+                            <IconButton colorScheme={'red'} aria-label='Remove Entry' icon={<MdDeleteForever />} onClick={() => removeExperience(index)}/>
                         
                         </AccordionItem>
                     )

@@ -9,8 +9,10 @@ import {
     FormLabel,
     Heading,
     Input,
+    IconButton,
 } from '@chakra-ui/react'
 import { useResume } from '../../context/app.context';
+import { MdDeleteForever } from 'react-icons/md'
 
 export const Education = () => {
 
@@ -55,7 +57,7 @@ export const Education = () => {
 
                             </AccordionPanel>
 
-                            <Button colorScheme={'red'} onClick={() => removeEducation(index)}>Remove</Button>
+                            <IconButton colorScheme={'red'} aria-label='Remove Entry' icon={<MdDeleteForever />} onClick={() => removeEducation(index)}/>
 
                         </AccordionItem>
                     )
