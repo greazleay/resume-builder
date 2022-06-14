@@ -1,5 +1,5 @@
-import { useState, useRef, ChangeEvent } from 'react';
-import { ISkill } from '../interfaces/resume-context.interface';
+import { useState, ChangeEvent } from 'react';
+import { ISkill } from '@interfaces/resume-context.interface';
 
 export const useResumeState = () => {
 

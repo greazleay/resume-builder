@@ -1,6 +1,6 @@
 import { Stack, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Heading } from '@chakra-ui/react';
 import { CgChevronRight } from 'react-icons/cg';
-import styles from '../styles/index.module.css';
+import styles from '@styles/index.module.css';
 
 export const Header = () => {
     return (

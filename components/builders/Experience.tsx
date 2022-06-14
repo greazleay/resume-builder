@@ -14,7 +14,7 @@ import {
     Textarea
 } from '@chakra-ui/react'
 import { MdDeleteForever } from 'react-icons/md'
-import { useResume } from '../../context/app.context';
+import { useResume } from '@contexts/app.context';
 
 
 export const Experience = () => {

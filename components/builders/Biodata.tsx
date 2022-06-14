@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { Box, FormControl, FormErrorMessage, FormLabel, Input, Stack } from '@chakra-ui/react'
-import { useResume } from '../../context/app.context';
+import { useResume } from '@contexts/app.context';
 
 export const Biodata = () => {
 

@@ -1,8 +1,8 @@
 import { Box, Tabs, TabList, TabPanels, TabPanel, Tab, Text } from '@chakra-ui/react'
-import { Biodata } from './builders/Biodata'
-import { Education } from './builders/Education'
-import { Experience } from './builders/Experience'
-import { Skills } from './builders/Skills'
+import { Biodata } from '@components/builders/Biodata'
+import { Education } from '@components/builders/Education'
+import { Experience } from '@components/builders/Experience'
+import { Skills } from '@components/builders/Skills'
 
 export const ResumeBuild = () => {
     return (

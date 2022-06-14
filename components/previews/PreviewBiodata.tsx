@@ -1,5 +1,5 @@
 import { Box, Text, Flex, Stack, Badge } from '@chakra-ui/react'
-import { useResume } from '../../context/app.context';
+import { useResume } from '@contexts/app.context';
 
 export const PreviewBiodata = () => {
 

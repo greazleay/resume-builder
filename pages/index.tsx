@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import { useRef } from 'react'
 import { useReactToPrint } from 'react-to-print'
-import { ResumeBuild } from '../components/ResumeBuild'
-import { ResumePreview } from '../components/ResumePreview'
+import { ResumeBuild } from '@components/ResumeBuild'
+import { ResumePreview } from '@components/ResumePreview'
 import { Button, Stack } from '@chakra-ui/react'
 import { MdOutlineFileDownload } from 'react-icons/md'
 

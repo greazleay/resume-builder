@@ -1,8 +1,8 @@
-import '../styles/globals.css'
+import '@styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/react'
-import { AppContextProvider } from '../context/app.context'
-import { Layout } from '../components/Layout'
+import { AppContextProvider } from '@contexts/app.context'
+import { Layout } from '@components/Layout'
 import theme from '../theme'
 import { useEffect } from 'react'
 

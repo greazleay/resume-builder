@@ -1,6 +1,6 @@
-import { Box, Container, Stack, HStack, IconButton, Text, Center } from '@chakra-ui/react';
-import { FaGithub, FaLinkedin, FaSmile, FaAddressCard } from 'react-icons/fa';
-import styles from "../styles/index.module.css";
+import { Stack, IconButton, Text } from '@chakra-ui/react';
+import { FaGithub, FaLinkedin, FaSmile } from 'react-icons/fa';
+import styles from "@styles/index.module.css";
 
 
 export const Footer = () => {

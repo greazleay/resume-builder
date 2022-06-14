@@ -1,7 +1,7 @@
-import { createContext, useContext, useRef } from 'react';
-import { PageProps } from '../interfaces/app.interface';
-import { useResumeState } from '../hooks/use-resume.state';
-import { IResumeContext } from '../interfaces/resume-context.interface';
+import { createContext, useContext } from 'react';
+import { PageProps } from '@interfaces/app.interface';
+import { useResumeState } from '@hooks/use-resume.state';
+import { IResumeContext } from '@interfaces/resume-context.interface';
 
 const ResumeContext = createContext<IResumeContext>(null!);
 

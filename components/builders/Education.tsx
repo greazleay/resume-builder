@@ -12,7 +12,7 @@ import {
     IconButton,
     Box,
 } from '@chakra-ui/react'
-import { useResume } from '../../context/app.context';
+import { useResume } from '@contexts/app.context';
 import { MdDeleteForever } from 'react-icons/md'
 
 export const Education = () => {

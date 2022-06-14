@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { useResume } from '../../context/app.context';
+import { useResume } from '@contexts/app.context';
 import {
     Box,
     Button,
